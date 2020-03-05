@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template,current_app
 from app.email import send_email
 
 def email_book_list(user, recipient_email, books):
