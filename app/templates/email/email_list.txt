@@ -1,0 +1,19 @@
+{{ user.username }} has shared his Book list with you.
+{{ user.username }}'s Book List
+{% if books %}
+{% for book in books %}
+************************************
+{{ book.title }}
+{{ book.author }}
+{{ book.date_purchased }}
+{{ book.notes }}
+{% endfor %}
+************************************
+{% else %}
+{{ user.username }} does not have any books to share.
+{% endif %}
+
+Shared by:
+{{ user.username }}
+{{ user.email }}
+

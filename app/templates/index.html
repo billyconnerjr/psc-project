@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+	<h3>Your Book List:</h3>
+	<p><a class="btn btn-info" href="{{ url_for('main.send_book_list') }}">Share list</a><p>
+	
+	{% if books %}
+	<table class="table table-hover ">
+	<thead class="thead-dark">
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date Purchased</th>
+			<th>Notes</th>
+			<th><th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for book in books %}
+		<tr>
+			<td>{{ book.title }}</td>
+			<td>{{ book.author }}</td>
+			<td>{{ book.date_purchased }}</td>
+			<td>{{ book.notes }}</td>
+			<td><a class="btn btn-info btn-sm" href="{{ url_for('main.edit_book', book_id=book.id) }}">Edit</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+	{% else %}
+	<p>You do not have any books in your list.</p>
+	{% endif %}
+	<hr>
+	<p><a class="btn btn-primary" href="{{ url_for('main.add_book') }}">Add Book</a></p>
+	
+{% endblock %}

@@ -1,0 +1,11 @@
+{{ user.username }},
+
+Please copy the following link to your browser to verify your email address:
+
+{{ url_for('auth.verify_email', token=token, _external=True) }}
+
+
+Thank you,
+
+Billy Conner Jr.
+Web Admin

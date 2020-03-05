@@ -1,0 +1,4 @@
+FLASK_APP=bookcenter.py
+FLASK_ENV=production
+MAIL_SERVER=localhost
+MAIL_PORT=8025

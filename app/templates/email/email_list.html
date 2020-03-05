@@ -1,0 +1,28 @@
+<p>{{ user.username }} has shared his Book list with you.</p>
+<h2>{{ user.username }}'s Book List</h2>
+{% if books %}
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Date Purchased</th>
+		<th>Notes</th>
+	</tr>
+	{% for book in books %}
+	<tr>
+		<td>{{ book.title }}</td>
+		<td>{{ book.author }}</td>
+		<td>{{ book.date_purchased }}</td>
+		<td>{{ book.notes }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<p>{{ user.username }} does not have any books to share.</p>
+{% endif %}
+
+
+<p> Shared by:<br>
+	{{ user.username }}<br>
+	{{ user.email }}
+</p>
