@@ -20,5 +20,5 @@ class Config(object):
     ADMINS = os.environ.get('ADMINS')
     
     #on heroku these can ge set using the following format
-    #heroku config:set MAIL_USERNAME=xxxxx
+    #heroku config:set MAIL_USERNAME=xxxxxx
     
